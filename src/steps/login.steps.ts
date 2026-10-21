@@ -1,5 +1,4 @@
 
-
 import { Given, When, Then } from '../fixtures/pages';
 
 import { expect } from '@playwright/test';
@@ -30,7 +29,7 @@ When('I leave the username and password fields empty', async ({ loginPage }) => 
 
 Then('I should be redirected to the home page', async ({ page }) => {
     // await page.getByText('Your Account').click();
-    await expect(page.getByRole('heading', { name: 'Account Details and Order History', level: 1 }), { message: "The text is visible!" }).toBeVisible();
+    await expect(page, 'User is not redirected to the Account page').toHaveURL('/account');
 });
 
 Then('I should see an error message indicating invalid credentials', async ({ page }) => {

@@ -38,6 +38,7 @@ export class RegisterPage {
         for (let [field, value] of Object.entries(data)) {
             if (!this.FillsForm[field as FillsForm]) throw new Error(`Campo desconocido en la tabla: "${field}"`);
             if (field === 'Email address') value = email = fixedEmail ?? value.replace('@', `+${Date.now()}@`);
+            // console.log(`Filling field "${field}" with value "${value}"`);
             if (field === 'Country') await this.FillsForm[field as FillsForm].selectOption({ label: value });
             else await this.FillsForm[field as FillsForm].fill(value);
         }
