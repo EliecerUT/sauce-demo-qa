@@ -34,6 +34,6 @@ Then('I should see a success message indicating that the user has been registere
 })
 
 Then('I should see an error message indicating that the email is already registered', async ({ RegisterPage, page }) => {
-    await expect(RegisterPage.errorMessage).toContainText('already exists');
+    await expect(RegisterPage.errorMessage).toContainText('A customer with this email address already exists.');
     await expect(page).toHaveURL(/\/auth\/register/);
 })
