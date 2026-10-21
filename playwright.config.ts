@@ -13,7 +13,6 @@ dotenv.config({ path: path.resolve(__dirname, '.env.dev') });
 const testDir = defineBddConfig({
   features: 'src/features/**/*.feature',
   steps: ['src/steps/**/*.ts', 'src/fixtures/pages.ts'],
-  outputDir: './allure-results',
 });
 
 /**
